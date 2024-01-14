@@ -1,0 +1,196 @@
+/* Ensure the entire HTML and body take up the full viewport height */
+html, body {
+  height: 100%;
+  margin: 0; /* Remove default margin */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/* Flex container to center its children */
+/* Base app styling */
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  transition: background-color 0.5s; /* Smooth transition for background change */
+}
+
+/* Weather conditions - Day & Night */
+.clear.day { background: #87CEEB; } /* Light blue for clear day */
+.clear.night { background: #2C3E50; } /* Dark blue for clear night */
+
+.rainy.day { background: #5D6D7E; } /* Grey for rainy day */
+.rainy.night { background: #35495E; } /* Darker grey for rainy night */
+
+.snow.day { background: #AED6F1; } /* Light grey for snowy day */
+.snow.night { background: #3b3e42; } /* Dark grey for snowy night */
+
+/* Add additional classes for other weather conditions and times */
+
+
+/* Style the search box */
+.search-box {
+  margin-bottom: 20px;
+  text-align: center; /* Center search bar text */
+  
+}
+
+/* Style the search bar */
+.search-bar {
+  width: 300px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2C3E50;
+}
+
+/* Style the city box */
+.city-box {
+  text-align: center; /* Center text and content in the box */
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  max-width: 80%; /* Prevents the box from being too wide on larger screens */
+  margin: auto; /* Further ensure centering */
+  opacity: 0.5;
+}
+
+/* Style the weather image */
+.weather img {
+  width: 50px; /* or any size you prefer */
+  height: auto;
+  margin-right: 10px;
+}
+
+/* Style the time display */
+.time {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.clear-sky {
+  background: #87CEEB; /* Light blue for clear sky */
+}
+
+.sun {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  box-shadow: 0 0 8px yellow; /* Add glow effect */
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.clear-night-sky {
+  background: #1a237e; /* Dark blue for night */
+  overflow: hidden;
+  position: relative;
+}
+
+.star {
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  animation: twinkle 1.5s infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+.moon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #fdd835; /* Moon color */
+  position: absolute;
+  top: 15%;
+  left: 60%;
+}
+.sunny-cloudy-sky {
+  background: #87CEEB; /* Light blue for clear sky */
+  overflow: hidden;
+  position: relative;
+}
+
+.cloud {
+  width: 200px;
+  height: 100px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  animation: moveClouds 60s linear infinite;
+}
+
+@keyframes moveClouds {
+  0% { left: -200px; }
+  100% { left: 100%; }
+}
+.rainy-sky {
+  background: #5D6D7E; /* Dark grey for rain */
+  overflow: hidden;
+  position: relative;
+}
+
+.raindrop {
+  width: 2px;
+  height: 10px;
+  background: #BEC9CD;
+  position: absolute;
+  animation: rain 0.5s linear infinite;
+}
+
+@keyframes rain {
+  100% { transform: translateY(600px); } /* Adjust based on container height */
+}
+.windy-day {
+  background: #87CEEB; /* Light blue for clear sky */
+  overflow: hidden;
+  position: relative;
+}
+
+.leaf {
+  width: 10px;
+  height: 5px;
+  background-color: green;
+  position: absolute;
+  animation: blowWind 2s linear infinite;
+}
+
+@keyframes blowWind {
+  0% { left: -10px; top: 100px; } /* Adjust start position */
+  100% { left: 100%; top: 200px; } /* Adjust end position and path */
+}
+.snowy-sky.day {
+  background: #AED6F1; /* Light grey for snow */
+  overflow: hidden;
+  position: relative;
+}
+.snowy-sky.night {
+  background: #AED6F1; /* Light grey for snow */
+  overflow: hidden;
+  position: relative;
+}
+.snowflake {
+  width: 5px;
+  height: 5px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  animation: snow 10s linear infinite;
+}
+
+@keyframes snow {
+  0% { top: -5px; }
+  100% { top: 100%; } /* Adjust based on container height */
+}
